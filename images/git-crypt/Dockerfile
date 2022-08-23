@@ -2,7 +2,6 @@ FROM debian:buster-slim
 
 ARG GID=1000
 ARG UID=1000
-ARG GIT_CRYPT_VERSION=nightly
 ARG USER=git-crypt
 
 RUN apt-get update && \
@@ -22,3 +21,5 @@ RUN echo "set-option -g default-shell /bin/zsh" >> /home/${USER}/.tmux.conf
 
 # install oh-my-zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+ENTRYPOINT [ "/bin/zsh" ]
