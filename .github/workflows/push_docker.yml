@@ -1,0 +1,50 @@
+name: push-docker
+
+on:
+  # Allow manual runs.
+  workflow_dispatch:
+  # Also run on updates to this repo.
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+  pull_request:
+    paths-ignore:
+      - '**/*.md'
+
+jobs:
+
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        variant: [ "git-crypt" ]
+
+    steps:
+      -
+        name: checkout
+        uses: actions/checkout@v3
+
+      -
+        name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: andyAugustin/app
+      -
+        name: Login to DockerHub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Build and push ${{ matrix.variant }}
+        uses: docker/build-push-action@v3
+        with:
+          context: ./images/${{ matrix.variant }}
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}

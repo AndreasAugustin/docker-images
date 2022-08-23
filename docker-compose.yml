@@ -3,13 +3,17 @@ version: '3.7'
 services:
   dev:
     build:
-      context: .
+      context: ./images/dev/
       target: DEV
     volumes:
       - .:/app/
   docs:
     build:
-      context: .
+      context: ./images/dev/
       target: DOCS
     volumes:
       - .:/app/
+
+  git-crypt:
+    build:
+      context: ./images/git-crypt/
