@@ -1,7 +1,7 @@
 #######################################
 # image for dev build environment
 ######################################
-FROM alpine:3.15.2 as DEV
+FROM alpine:3.16.2 as DEV
 # install packages
 RUN apk add --update --no-cache bash make git zsh curl tmux
 
@@ -17,7 +17,7 @@ WORKDIR /app
 # image for creating the documentation
 ######################################
 
-FROM node:17.8.0-alpine as DOCS
+FROM node:18.7.0-alpine as DOCS
 
 # install packages
 RUN apk add --update --no-cache bash make git zsh curl tmux
