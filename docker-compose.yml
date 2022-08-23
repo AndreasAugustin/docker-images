@@ -17,3 +17,7 @@ services:
   git-crypt:
     build:
       context: ./images/git-crypt/
+
+  git-secrets:
+    build:
+      context: ./images/git-secrets/

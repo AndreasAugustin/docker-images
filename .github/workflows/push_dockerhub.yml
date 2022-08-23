@@ -20,7 +20,7 @@ jobs:
 
     strategy:
       matrix:
-        variant: [ "git-crypt", "dev" ]
+        variant: [ "git-crypt", "dev", "git-secrets" ]
 
     steps:
       -

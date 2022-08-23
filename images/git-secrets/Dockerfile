@@ -3,16 +3,22 @@ FROM debian:buster-slim
 ARG GID=1000
 ARG UID=1000
 ARG GIT_CRYPT_VERSION=nightly
-ARG USER=git-crypt
+ARG USER=git-secrets
 
 RUN apt-get update && \
     # Install basic requirements
-    apt-get install -y git git-crypt zsh curl tmux make && \
+    apt-get install -y git zsh curl tmux make && \
     # Tidy up apt
     apt-get clean
 
 # add user group
 RUN groupadd -g ${GID} ${USER} && useradd -u ${UID} -g ${GID} -m ${USER}
+
+# install git-crypt
+RUN mkdir /git/  && \
+    git clone https://github.com/awslabs/git-secrets.git /git/git-secrets/ && \
+    cd /git/git-secrets && \
+    make install
 
 USER ${USER}
 WORKDIR /home/${USER}
