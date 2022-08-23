@@ -45,7 +45,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: AndreasAugustin/${{ matrix.variant }}
+          images: ${{ env.REGISTRY }}/AndreasAugustin/${{ matrix.variant }}
       -
         name: Build and push ${{ matrix.variant }}
         uses: docker/build-push-action@v3
