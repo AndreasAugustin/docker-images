@@ -20,7 +20,7 @@ jobs:
 
     strategy:
       matrix:
-        variant: [ "git-crypt" ]
+        variant: [ "git-crypt", "dev" ]
 
     steps:
       -
@@ -32,7 +32,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: andyAugustin/app
+          images: andyAugustin/${{ matrix.variant }}
       -
         name: Login to DockerHub
         if: github.event_name != 'pull_request'
