@@ -1,4 +1,4 @@
-name: push-docker
+name: push-dockerhub
 
 on:
   # Allow manual runs.
