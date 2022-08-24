@@ -1,7 +1,4 @@
-name: push-dockerghcr
-
-env:
-  REGISTRY: ghcr.io
+name: push-docker
 
 on:
   # Allow manual runs.
@@ -33,11 +30,18 @@ jobs:
         name: checkout
         uses: actions/checkout@v3
       -
+        name: Login to DockerHub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
         name: Login to GHCR
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v2
         with:
-          registry: ${{ env.REGISTRY }}
+          registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       -
@@ -45,7 +49,9 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/AndreasAugustin/${{ matrix.variant }}
+          images: |
+            andyAugustin/${{ matrix.variant }}
+            ghcr.io/AndreasAugustin/${{ matrix.variant }}
       -
         name: Build and push ${{ matrix.variant }}
         uses: docker/build-push-action@v3
@@ -54,3 +60,11 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      -
+        name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: andyAugustin/${{ matrix.variant }}
+          readme-filepath: ./images/${{ matrix.variant }}/README.md
