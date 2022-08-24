@@ -5,6 +5,7 @@ ARG UID=1000
 ARG USER=git-secrets
 ARG GITHUB_URL="https://github.com/AndreasAugustin/docker-images/tree/main/images/git-secrets"
 
+# # https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
 LABEL org.opencontainers.image.url="${GITHUB_URL}"
 LABEL org.opencontainers.image.documentation="${GITHUB_URL}/README.md"
 LABEL org.opencontainers.image.licenses="MIT"
