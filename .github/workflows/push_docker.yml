@@ -68,3 +68,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: andyAugustin/${{ matrix.variant }}
           readme-filepath: ./images/${{ matrix.variant }}/README.md
+          short-description: See ${{ github.repository }}/images/${{ matrix.variant}} for the source.
