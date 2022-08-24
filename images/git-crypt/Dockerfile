@@ -3,6 +3,15 @@ FROM debian:buster-slim
 ARG GID=1000
 ARG UID=1000
 ARG USER=git-crypt
+ARG GITHUB_URL="https://github.com/AndreasAugustin/docker-images/tree/main/images/git-crypt"
+
+# https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
+LABEL org.opencontainers.image.url="${GITHUB_URL}"
+LABEL org.opencontainers.image.documentation="${GITHUB_URL}/README.md"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.authors="andyAugustin"
+LABEL org.opencontainers.image.title="git-crypt image"
+LABEL org.opencontainers.image.description="contains git-crypt"
 
 RUN apt-get update && \
     # Install basic requirements

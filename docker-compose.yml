@@ -11,7 +11,7 @@ services:
 
   docs:
     build:
-      context: ./images/dev/
+      context: ./images/docs/
       target: DOCS
     volumes:
       - .:/app/
