@@ -50,6 +50,3 @@ RUN echo "set-option -g default-shell /bin/zsh" >> /home/${USER}/.tmux.conf
 
 # install oh-my-zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-ENTRYPOINT [ "/bin/zsh" ]
-
