@@ -1,0 +1,10 @@
+schemaVersion: '2.0.0'
+commandTests:
+  - name: "zsh is installed"
+    command: "which"
+    args: ["zsh"]
+    expectedOutput: ["/bin/zsh"]
+  - name: "git-secrets is installed"
+    command: "which"
+    args: ["git-secrets"]
+    expectedOutput: ["/usr/local/bin/git-secrets"]

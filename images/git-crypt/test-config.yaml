@@ -1,0 +1,10 @@
+schemaVersion: '2.0.0'
+commandTests:
+  - name: "zsh is installed"
+    command: "which"
+    args: ["zsh"]
+    expectedOutput: ["/bin/zsh"]
+  - name: "git-crypt is installed"
+    command: "which"
+    args: ["git-crypt"]
+    expectedOutput: ["/usr/bin/git-crypt"]
