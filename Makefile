@@ -38,8 +38,3 @@ $(IMAGES_DIRS):
 	docker-compose run container-structure-test test \
 		--image andyaugustin/$@ \
 		--config images/$@/test-config.yaml
-
-.PhONY: container-structure-test
-container-structure-test : ## run the container tests
-	docker-compose run container-structure-test test --image andyaugustin/git-secrets:main \
-		--config images/git-secrets/test-config.yaml
