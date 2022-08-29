@@ -32,5 +32,5 @@ prune: ## delete the whole environment
 
 .PhONY: container-structure-test
 container-structure-test : ## run the container tests
-	docker-compose run container-structure-test test --image andyaugustin/git-secrets \
+	docker-compose run container-structure-test test --image andyaugustin/git-secrets:main \
 		--config test-config.yaml

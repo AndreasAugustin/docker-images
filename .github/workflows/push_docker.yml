@@ -73,6 +73,8 @@ jobs:
         name: run tests
         run: |
           echo "Install container tools"
-          curl -LO https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64 && chmod +x container-structure-test-linux-amd64 && sudo mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
+          curl -LO https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64 \
+            && chmod +x container-structure-test-linux-amd64 \
+            && sudo mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
           echo "Run tests"
-          container-structure-test test --image andyaugustin/git-secrets:main --config test-config.yaml
+          container-structure-test test --image andyaugustin/git-secrets:main --pull --config test-config.yaml
