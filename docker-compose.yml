@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   dev:
-    image: andyAugustin/dev
+    image: andyaugustin/dev
     build:
       context: ./images/dev/
       target: DEV
@@ -11,7 +11,7 @@ services:
     working_dir: /app/
 
   docs:
-    image: andyAugustin/docs
+    image: andyaugustin/docs
     build:
       context: ./images/docs/
       target: DOCS
@@ -20,12 +20,12 @@ services:
     working_dir: /app/
 
   git-crypt:
-    image: andyAugustin/git-crypt
+    image: andyaugustin/git-crypt
     build:
       context: ./images/git-crypt/
 
   git-secrets:
-    image: andyAugustin/git-secrets
+    image: andyaugustin/git-secrets
     build:
       context: ./images/git-secrets/
     volumes:
