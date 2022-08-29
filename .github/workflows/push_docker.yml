@@ -78,5 +78,5 @@ jobs:
             && sudo mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
           echo "Run tests"
           container-structure-test test \
-            --image andyaugustin/${{ matrix.variant }}:main \
+            --image ghcr.io/andreasaugustin/${{ matrix.variant }}:main \
             --pull --config images/${{ matrix.variant }}/test-config.yaml
