@@ -1,0 +1,6 @@
+schemaVersion: '2.0.0'
+commandTests:
+  - name: "andyaugustin/git-secrets"
+    command: "which"
+    args: ["git-secrets"]
+    expectedOutput: ["/usr/local/bin/git-secrets"]

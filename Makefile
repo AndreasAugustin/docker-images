@@ -29,3 +29,8 @@ zsh: ## open dev container with build environment
 .PHONY: prune
 prune: ## delete the whole environment
 	docker-compose down -v --rmi all --remove-orphans
+
+.PhONY: container-structure-test
+container-structure-test : ## run the container tests
+	docker-compose run container-structure-test test --image andyaugustin/git-secrets \
+		--config test-config.yaml

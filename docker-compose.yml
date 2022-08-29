@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   dev:
+    image: andyAugustin/dev
     build:
       context: ./images/dev/
       target: DEV
@@ -10,6 +11,7 @@ services:
     working_dir: /app/
 
   docs:
+    image: andyAugustin/docs
     build:
       context: ./images/docs/
       target: DOCS
@@ -18,9 +20,21 @@ services:
     working_dir: /app/
 
   git-crypt:
+    image: andyAugustin/git-crypt
     build:
       context: ./images/git-crypt/
 
   git-secrets:
+    image: andyAugustin/git-secrets
     build:
       context: ./images/git-secrets/
+    volumes:
+      - .:/app/
+    working_dir: /app/
+
+  container-structure-test:
+    image: gcr.io/gcp-runtimes/container-structure-test:latest
+    volumes:
+      - .:/app/
+      - /var/run/docker.sock:/var/run/docker.sock
+    working_dir: /app/
