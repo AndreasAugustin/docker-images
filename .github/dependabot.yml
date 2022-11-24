@@ -12,21 +12,21 @@ updates:
     interval: weekly
     time: "04:00"
   open-pull-requests-limit: 10
-  - package-ecosystem: docker
-    directory: "/images/doc"
-    schedule:
-      interval: weekly
-      time: "04:00"
-    open-pull-requests-limit: 10
-  - package-ecosystem: docker
-    directory: "/images/git-crypt"
-    schedule:
-      interval: weekly
-      time: "04:00"
-    open-pull-requests-limit: 10
-  - package-ecosystem: docker
-    directory: "/images/git-secrets"
-    schedule:
-      interval: weekly
-      time: "04:00"
-    open-pull-requests-limit: 10
+- package-ecosystem: docker
+  directory: "/images/doc"
+  schedule:
+    interval: weekly
+    time: "04:00"
+  open-pull-requests-limit: 10
+- package-ecosystem: docker
+  directory: "/images/git-crypt"
+  schedule:
+    interval: weekly
+    time: "04:00"
+  open-pull-requests-limit: 10
+- package-ecosystem: docker
+  directory: "/images/git-secrets"
+  schedule:
+    interval: weekly
+    time: "04:00"
+  open-pull-requests-limit: 10
