@@ -1,0 +1,14 @@
+schemaVersion: "2.0.0"
+commandTests:
+  - name: "python is installed"
+    command: "which"
+    args: ["python"]
+    expectedOutput: ["/usr/local/bin/python"]
+  - name: "nodejs is installed"
+    command: "which"
+    args: ["node"]
+    expectedOutput: ["/usr/bin/node"]
+  - name: "k6 is installed"
+    command: "which"
+    args: ["k6"]
+    expectedOutput: ["/usr/bin/k6"]

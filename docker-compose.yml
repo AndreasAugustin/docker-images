@@ -32,6 +32,14 @@ services:
       - .:/app/
     working_dir: /app/
 
+  python-nodejs-k6:
+    image: andyaugustin/python-nodejs-k6
+    build:
+      context: ./images/python-nodejs-k6
+    volumes:
+      - .:/app/
+    working_dir: /app/
+
   container-structure-test:
     image: gcr.io/gcp-runtimes/container-structure-test:latest
     volumes:

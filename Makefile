@@ -4,7 +4,7 @@ SHELL := /bin/bash
 ###########################
 # VARIABLES
 ###########################
-IMAGES_DIRS := dev docs git-crypt git-secrets
+IMAGES_DIRS := dev docs git-crypt git-secrets python-nodejs-k6
 
 #IMAGES_DIRS = a, b
 ###########################
