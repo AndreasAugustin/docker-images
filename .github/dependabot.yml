@@ -1,32 +1,38 @@
 version: 2
 updates:
-- package-ecosystem: docker
-  directory: "/"
-  schedule:
-    interval: weekly
-    time: "04:00"
-  open-pull-requests-limit: 10
-- package-ecosystem: docker
-  directory: "/images/dev"
-  schedule:
-    interval: weekly
-    time: "04:00"
-  open-pull-requests-limit: 10
-- package-ecosystem: docker
-  directory: "/images/doc"
-  schedule:
-    interval: weekly
-    time: "04:00"
-  open-pull-requests-limit: 10
-- package-ecosystem: docker
-  directory: "/images/git-crypt"
-  schedule:
-    interval: weekly
-    time: "04:00"
-  open-pull-requests-limit: 10
-- package-ecosystem: docker
-  directory: "/images/git-secrets"
-  schedule:
-    interval: weekly
-    time: "04:00"
-  open-pull-requests-limit: 10
+  - package-ecosystem: docker
+    directory: "/"
+    schedule:
+      interval: weekly
+      time: "04:00"
+    open-pull-requests-limit: 10
+  - package-ecosystem: docker
+    directory: "/images/dev"
+    schedule:
+      interval: weekly
+      time: "04:00"
+    open-pull-requests-limit: 10
+  - package-ecosystem: docker
+    directory: "/images/docs"
+    schedule:
+      interval: weekly
+      time: "04:00"
+    open-pull-requests-limit: 10
+  - package-ecosystem: docker
+    directory: "/images/git-crypt"
+    schedule:
+      interval: weekly
+      time: "04:00"
+    open-pull-requests-limit: 10
+  - package-ecosystem: docker
+    directory: "/images/git-secrets"
+    schedule:
+      interval: weekly
+      time: "04:00"
+    open-pull-requests-limit: 10
+  - package-ecosystem: docker
+    directory: "/images/python-nodejs-k6"
+    schedule:
+      interval: weekly
+      time: "04:00"
+    open-pull-requests-limit: 10
