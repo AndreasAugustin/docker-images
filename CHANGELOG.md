@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/AndreasAugustin/docker-images/compare/v1.0.0...v1.0.1) (2023-09-24)
+
+
+### Bug Fixes
+
+* **ci:** :bug: issues within ci ([23f68a0](https://github.com/AndreasAugustin/docker-images/commit/23f68a0cc637ebb6803a4705ef727f363b945fec))
+
 ## 1.0.0 (2023-09-24)
 
 
