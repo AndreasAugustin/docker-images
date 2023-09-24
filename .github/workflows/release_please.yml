@@ -1,0 +1,29 @@
+name: release-please
+
+on:
+  workflow_call:
+    outputs:
+      release_created:
+        description: "Set if the release has been created"
+        value: ${{ jobs.release_please.outputs.release_created }}
+      tag_name:
+        description: "The tag name"
+        value: ${{ jobs.release_please.outputs.tag_name }}
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release_please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release_please.outputs.release_created }}
+      tag_name: ${{ steps.release_please.outputs.tag_name }}
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release_please
+        with:
+          release-type: simple
+          package-name: docker-images
