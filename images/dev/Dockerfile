@@ -1,7 +1,7 @@
 #######################################
 # image for dev build environment
 ######################################
-FROM alpine:3.19.0 as DEV
+FROM alpine:3.19.1 as DEV
 
 ARG USER=dev
 ARG GROUP=dev
