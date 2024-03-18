@@ -2,7 +2,7 @@
 # image for creating the documentation
 ######################################
 
-FROM node:21.5.0-alpine as DOCS
+FROM node:21.7.1-alpine as DOCS
 
 ARG USER=docs
 ARG GROUP=docs
